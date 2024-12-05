@@ -1,0 +1,25 @@
+name: "sharepoint-download-action"
+description: "GitHub Action for downloading a single item from Microsoft SharePoint"
+author: "MedicalVR BV"
+branding:
+  icon: "download"
+  color: "green"
+inputs:
+  azure-client-id:
+    description: "Azure Client ID"
+    required: true
+  azure-client-secret:
+    description: "Azure Client Secret"
+    required: true
+  azure-tenant-id:
+    description: "Azure Tenant ID"
+    required: true
+  uri:
+    description: "Target location of the file as URI, e.g. 'sharepoint://Team/Builds/Automation/alpha/v124/file.zip'"
+    required: true
+  target:
+    description: "Target absolute path to download the file to"
+    required: true
+runs:
+  using: "node20"
+  main: "dist/index.js"
